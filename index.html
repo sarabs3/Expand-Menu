@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Expand Menu</title>
+</head>
+
+<body>
+	<!-- expand-menu works like a container -->
+	<div class="expand-menu">
+    	<!-- expand-condition is the condition to perform a action -->
+    	<div class="expand-condition">
+        	<fieldset>
+                <input type="radio" name="options" value="yes" />
+                <input type="radio" name="options" value="no" />
+            </fieldset>
+        </div>
+        <!-- expand-this to show content when condition is true -->
+        <div class="expand-this">
+        adada
+        adas
+        dd
+        </div>
+    </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>	
+	$('.expand-menu input:radio').click(function(){
+		var $value = $(this).val();
+		// select content to show
+		var $expandThis = $(this).parents('.expand-condition').siblings('.expand-this');
+		// condition 1
+		if($value === 'yes'){
+			$expandThis.slideDown(200);
+		}
+		// condition 2
+		if( $value === 'no'){
+			$expandThis.slideUp(200);
+		}
+	})
+</script>
+</body>
+</html>
